@@ -1,15 +1,25 @@
 package com.example.socialapp.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Friendship extends Entity<Long> {
+public class Friendship extends Entity<Tuple<Long, Long>> {
     private LocalDateTime creationDate;
     private Tuple<User, User> users;
 
+    public Friendship(LocalDateTime creationDate, Tuple<User, User> users) {
+        this.creationDate = creationDate;
+        this.users = users;
+    }
 
     public Friendship(Tuple<User, User> users) {
         this.users = users;
+        this.setId(new Tuple<>(users.first().getId(), users.second().getId()));
+        creationDate = LocalDateTime.now();
+    }
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
     public Tuple<User, User> getUsers() {

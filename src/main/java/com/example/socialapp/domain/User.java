@@ -6,7 +6,8 @@ public class User extends Entity<Long>{
     private String firstName;
     private String lastName;
 
-    public User(String firstName, String lastName) {
+    public User(long id, String firstName, String lastName) {
+        this.setId(id);
         this.firstName = firstName;
         this.lastName = lastName;
     }
