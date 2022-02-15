@@ -1,4 +1,4 @@
-package utils;
+package com.example.socialapp.utils;
 
 import com.example.socialapp.repository.UserRepository;
 import com.example.socialapp.service.UserService;

@@ -1,7 +1,7 @@
-package database.table;
+package com.example.socialapp.database.table;
 
 import com.example.socialapp.domain.User;
-import utils.Query;
+import com.example.socialapp.utils.Query;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

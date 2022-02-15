@@ -1,6 +1,4 @@
-package utils;
-
-import java.time.format.DateTimeFormatter;
+package com.example.socialapp.utils;
 
 public class Constants {
     public final static class Db {

@@ -1,4 +1,4 @@
-package database;
+package com.example.socialapp.database;
 
 import java.sql.Connection;
 import java.sql.SQLException;

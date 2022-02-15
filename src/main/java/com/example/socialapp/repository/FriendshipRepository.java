@@ -1,13 +1,12 @@
 package com.example.socialapp.repository;
-
 import com.example.socialapp.domain.Friendship;
 import com.example.socialapp.domain.FriendshipDTO;
 import com.example.socialapp.domain.Tuple;
 import com.example.socialapp.domain.User;
-import database.MetaDb;
-import database.table.FriendshipTable;
-import utils.Constants;
-import utils.Resources;
+import com.example.socialapp.database.MetaDb;
+import com.example.socialapp.database.table.FriendshipTable;
+import com.example.socialapp.utils.Constants;
+import com.example.socialapp.utils.Resources;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

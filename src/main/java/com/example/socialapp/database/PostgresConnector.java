@@ -1,11 +1,10 @@
-package database;
+package com.example.socialapp.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class PostgresConnector implements DatabaseConnector{
     private final List<Connection> connections;

@@ -1,4 +1,4 @@
-package utils;
+package com.example.socialapp.utils;
 
 public enum Query {
     ADD,

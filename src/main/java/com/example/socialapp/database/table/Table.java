@@ -1,5 +1,4 @@
-package database.table;
-import java.sql.ResultSet;
+package com.example.socialapp.database.table;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;

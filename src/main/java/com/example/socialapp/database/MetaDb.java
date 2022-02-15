@@ -1,10 +1,9 @@
-package database;
+package com.example.socialapp.database;
 
-import com.example.socialapp.domain.Friendship;
-import database.table.FriendshipTable;
-import database.table.Table;
-import database.table.UserTable;
-import utils.Constants;
+import com.example.socialapp.database.table.FriendshipTable;
+import com.example.socialapp.database.table.Table;
+import com.example.socialapp.database.table.UserTable;
+import com.example.socialapp.utils.Constants;
 
 import java.sql.Connection;
 import java.sql.SQLException;
