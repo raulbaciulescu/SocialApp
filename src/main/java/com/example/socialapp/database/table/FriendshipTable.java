@@ -37,6 +37,7 @@ public class FriendshipTable implements Table<Tuple<Long, Long>, FriendshipDTO> 
         statement.setLong(1, friendshipDTO.firstID());
         statement.setLong(2, friendshipDTO.secondID());
         statement.setString(3, friendshipDTO.creationDate().toString());
+        statement.executeUpdate();
     }
 
     @Override

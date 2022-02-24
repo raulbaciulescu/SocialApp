@@ -3,7 +3,7 @@ import com.example.socialapp.domain.Friendship;
 import com.example.socialapp.domain.FriendshipDTO;
 import com.example.socialapp.domain.Tuple;
 import com.example.socialapp.domain.User;
-import com.example.socialapp.database.MetaDb;
+import com.example.socialapp.database.TableFactory;
 import com.example.socialapp.database.table.FriendshipTable;
 import com.example.socialapp.utils.Constants;
 import com.example.socialapp.utils.Resources;
@@ -17,7 +17,7 @@ public class FriendshipRepository implements Repository<Tuple<Long, Long>, Frien
     private FriendshipTable table;
 
     public FriendshipRepository() throws SQLException {
-        table = (FriendshipTable) MetaDb.getInstance().table(Constants.Tables.FRIENDSHIPS);
+        table = (FriendshipTable) TableFactory.getInstance().table(Constants.Tables.FRIENDSHIPS);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class FriendshipRepository implements Repository<Tuple<Long, Long>, Frien
         if (friendshipDTO.isPresent()) {
             Optional<User> first = Resources.userService.findByID(friendshipDTO.get().firstID());
             Optional<User> second = Resources.userService.findByID(friendshipDTO.get().secondID());
-            Tuple<User, User> users =  new Tuple<User, User>(first.get(), second.get());
+            Tuple<User, User> users =  new Tuple<>(first.get(), second.get());
             Friendship friendship = new Friendship(friendshipDTO.get().creationDate(),users);
             return Optional.of(friendship);
         }

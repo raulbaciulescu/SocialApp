@@ -23,11 +23,11 @@ public class UserTable implements Table<Long, User>{
     }
 
     public void initStatements() throws SQLException {
-        statements.put(Query.ADD, connection.prepareStatement("INSERT INTO user(id, firstName, lastName) VALUES (?, ?, ?)"));
-        statements.put(Query.UPDATE, connection.prepareStatement("UPDATE user set firstName = ?, lastName = ? WHERE id = ?"));
-        statements.put(Query.DELETE, connection.prepareStatement("DELETE FROM user WHERE id = ?"));
-        statements.put(Query.GET_ALL, connection.prepareStatement("SELECT * FROM user"));
-        statements.put(Query.FIND_BY_ID, connection.prepareStatement("SELECT * FROM user WHERE id = ?"));
+        statements.put(Query.ADD, connection.prepareStatement("INSERT INTO meta.public.user(id, first_name, last_name) VALUES (?, ?, ?)"));
+        statements.put(Query.UPDATE, connection.prepareStatement("UPDATE meta.public.user set first_name = ?, last_name = ? WHERE id = ?"));
+        statements.put(Query.DELETE, connection.prepareStatement("DELETE FROM meta.public.user WHERE id = ?"));
+        statements.put(Query.GET_ALL, connection.prepareStatement("SELECT * FROM meta.public.user"));
+        statements.put(Query.FIND_BY_ID, connection.prepareStatement("SELECT * FROM meta.public.user WHERE id = ?"));
     }
 
 

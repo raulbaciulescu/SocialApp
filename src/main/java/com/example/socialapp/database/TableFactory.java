@@ -6,17 +6,19 @@ import com.example.socialapp.database.table.UserTable;
 import com.example.socialapp.utils.Constants;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
-public class MetaDb {
-    private static MetaDb instance = null;
+public class TableFactory {
+    private static TableFactory instance = null;
     private PostgresConnector connector;
     private Map<Constants.Tables, Table> tables;
     Connection connection;
 
-    private MetaDb() throws SQLException {
+    private TableFactory() throws SQLException {
         tables = new HashMap<>();
         connector = new PostgresConnector(Constants.Db.DB_URL);
         connection = connector.connect(Constants.Db.DB_USER, Constants.Db.DB_PASSWORD);
@@ -29,9 +31,9 @@ public class MetaDb {
     }
 
 
-    public static MetaDb getInstance() throws SQLException {
+    public static TableFactory getInstance() throws SQLException {
         if (instance == null)
-            instance = new MetaDb();
+            instance = new TableFactory();
         return instance;
     }
 

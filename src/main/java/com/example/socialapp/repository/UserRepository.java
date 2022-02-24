@@ -1,6 +1,6 @@
 package com.example.socialapp.repository;
 
-import com.example.socialapp.database.MetaDb;
+import com.example.socialapp.database.TableFactory;
 import com.example.socialapp.domain.User;
 
 import com.example.socialapp.database.table.UserTable;
@@ -14,7 +14,7 @@ public class UserRepository implements Repository<Long, User> {
     private final UserTable table;
 
     public UserRepository() throws SQLException {
-        this.table = (UserTable) MetaDb.getInstance().table(Constants.Tables.USERS);
+        this.table = (UserTable) TableFactory.getInstance().table(Constants.Tables.USERS);
     }
 
     @Override
