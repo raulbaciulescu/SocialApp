@@ -2,6 +2,7 @@ package com.example.socialapp;
 
 import com.example.socialapp.domain.Friendship;
 import com.example.socialapp.domain.User;
+import com.example.socialapp.utils.Constants;
 import com.example.socialapp.utils.Resources;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,12 +19,14 @@ public class HelloApplication extends Application {
         Resources resource = Resources.getInstance();
 
         ArrayList<User> users = Resources.userService.getAll();
-        Resources.friendshipService.add(users.get(0), users.get(1));
+        //Resources.friendshipService.add(users.get(0), users.get(1));
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(Constants.Scene.LOG_IN));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        stage.setHeight(500);
+        stage.setWidth(500);
+        stage.setTitle("SocialApp");
         stage.setScene(scene);
         stage.show();
     }

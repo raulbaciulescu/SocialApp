@@ -1,8 +1,6 @@
 package com.example.socialapp.database;
 
-import com.example.socialapp.database.table.FriendshipTable;
-import com.example.socialapp.database.table.Table;
-import com.example.socialapp.database.table.UserTable;
+import com.example.socialapp.database.table.*;
 import com.example.socialapp.utils.Constants;
 
 import java.sql.Connection;
@@ -28,6 +26,8 @@ public class TableFactory {
     private void initTables() throws SQLException {
         tables.put(Constants.Tables.USERS, new UserTable(connection));
         tables.put(Constants.Tables.FRIENDSHIPS, new FriendshipTable(connection));
+        tables.put(Constants.Tables.LOGIN, new LoginTable(connection));
+        tables.put(Constants.Tables.REQUESTS, new FriendshipRequestTable(connection));
     }
 
 

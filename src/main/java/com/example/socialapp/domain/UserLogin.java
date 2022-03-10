@@ -2,13 +2,23 @@ package com.example.socialapp.domain;
 
 import com.example.socialapp.utils.PasswordAuthentication;
 
-public class UserLogin extends User {
+public class UserLogin extends Entity<Long> {
+    private long userId;
     private String username;
     private String hashedPassword;
-    public UserLogin(long id, String firstName, String lastName, String username, String password) {
-        super(id, firstName, lastName);
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public UserLogin(String username, String hashedPassword, Long userId) {
         this.username = username;
-        this.hashedPassword = password;
+        this.hashedPassword = hashedPassword;
+        this.userId = userId;
     }
 
     public String getUsername() {
